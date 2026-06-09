@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.XR;
 public abstract class Animal : MonoBehaviour
 {
 
-    [field: Header("Stats")]
+    [field: Header("stats")]
     [field: SerializeField] public float WalkSpeed { get; private set; }
     [field: SerializeField] public float RunSpeed { get; private set; }
     [field: SerializeField] public float Trust { get; private set; }
@@ -45,8 +45,8 @@ public abstract class Animal : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentState != null)
-            CurrentState.OnStateUpdate(this);
+     /*   if (CurrentState != null)
+            CurrentState.OnStateUpdate(this);*/
 
         //if (spawner.isTreatActive)
         //    SwitchState(ChaseTreat);
@@ -54,11 +54,11 @@ public abstract class Animal : MonoBehaviour
 
     public void SwitchState(StateBaseClass newState)
     {
-        if (CurrentState != null)
+    /*    if (CurrentState != null)
             CurrentState.OnStateExit(this);
 
         newState.OnStateEnter(this);
-
+*/
         CurrentState = newState;
     }
 
