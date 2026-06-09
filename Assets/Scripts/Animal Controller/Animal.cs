@@ -13,7 +13,6 @@ public abstract class Animal : MonoBehaviour
     [field: SerializeField] public float Trust { get; private set; }
     [field: SerializeField] public float Hunger { get; private set; }
     [field: SerializeField] public float Energy { get; private set; }
-    [field: SerializeField] public float Attention { get; private set; }
 
 
     [field: Header("Components")]

@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 194cfa3fd8a70ac49bc149d0fbbe3adc
-      internalID: 290789290
+      spriteID: d8a0ae3c71b84e345b6c7e57790a5be0
+      internalID: 2124654816
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb09c9beef6d7d458469bfce45bdae9
-      internalID: 1315762871
+      spriteID: edddd2af7df3b9c4d8d5e73ecb2f628d
+      internalID: 1656527276
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbdc13ab34104c64484626b4d3a2656d
-      internalID: -1694810027
+      spriteID: d160ce3993c961f44a5b44cd551ee73d
+      internalID: 187593793
       vertices: []
       indices: 
       edges: []
@@ -178,8 +178,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d72888f1451984e4c9f59fb1e8c51bc3
-      internalID: -146250305
+      spriteID: 62db58dc5ef7cdd42bd9b036bd53e545
+      internalID: -1543339838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FerretEat_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315d1391f33169c4d9a46cbc60e3d3a2
+      internalID: 1509249591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FerretEat_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773e5f48035f6234aae1a9b656dbc92c
+      internalID: 855663028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FerretEat_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc9bfb4a433d82479773116b7c06976
+      internalID: -418435809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FerretEat_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254acffb09042d142ac9507beaa00ac1
+      internalID: -860824770
       vertices: []
       indices: 
       edges: []
@@ -188,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 43586dd98c41cf442b1d8e26f052d53a
+    spriteID: 47599901ae10e9245a9f62b24e9064a7
     internalID: 0
     vertices: []
     indices: 
@@ -198,12 +286,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      FerretEat_0: 290789290
-      FerretEat_1: 1315762871
-      FerretEat_2: -1694810027
-      FerretEat_3: -146250305
+      FerretEat_0: 2124654816
+      FerretEat_1: 1656527276
+      FerretEat_2: 187593793
+      FerretEat_3: -1543339838
+      FerretEat_4: 1509249591
+      FerretEat_5: 855663028
+      FerretEat_6: -418435809
+      FerretEat_7: -860824770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

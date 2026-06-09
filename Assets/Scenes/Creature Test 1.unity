@@ -251,7 +251,6 @@ MonoBehaviour:
   <Trust>k__BackingField: 0
   <Hunger>k__BackingField: 73.8
   <Energy>k__BackingField: 0
-  <Attention>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 34456498}
   <spawner>k__BackingField: {fileID: 1739608713}
   Idle: Idle
