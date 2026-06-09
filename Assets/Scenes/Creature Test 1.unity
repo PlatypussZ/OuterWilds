@@ -130,7 +130,10 @@ GameObject:
   - component: {fileID: 34456500}
   - component: {fileID: 34456499}
   - component: {fileID: 34456498}
+  - component: {fileID: 34456504}
+  - component: {fileID: 34456502}
   - component: {fileID: 34456501}
+  - component: {fileID: 34456503}
   m_Layer: 6
   m_Name: Ferret
   m_TagString: Untagged
@@ -243,22 +246,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 34456497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c735ee98a89f78488edea166f640a48, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ec33952964707479803559d8ad1a39, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cat
-  <WalkSpeed>k__BackingField: 1.24
-  <RunSpeed>k__BackingField: 16
-  <Trust>k__BackingField: 0
-  <Hunger>k__BackingField: 73.8
-  <Energy>k__BackingField: 0
-  <Animator>k__BackingField: {fileID: 34456498}
-  <spawner>k__BackingField: {fileID: 1739608713}
-  Idle: Idle
-  Walking: Walk
-  Running: Run
-  Eating: Eating
-  IsEating: 0
-  IsWaiting: 0
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationController
+  animator: {fileID: 34456498}
+  currentAnimationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
+--- !u!114 &34456502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34456497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e4ba0c62b1e514fafa5a66f954b343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ferret
+  ferretAnimationController: {fileID: 34456501}
+  mouseDistanceCalculator: {fileID: 34456504}
+  startStats:
+    StartingTrust: 0
+    StartWalkSpeed: 1.24
+    StartRunSpeed: 16
+    StartHunger: 73
+    StartEnergy: 0
+  behaviors:
+  - StartValue: 0
+    Behavior: {fileID: 34456503}
+    animationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
+  stats:
+    <CurrentTrust>k__BackingField: 0
+    <WalkSpeed>k__BackingField: 0
+    <RunSpeed>k__BackingField: 0
+    <Hunger>k__BackingField: 0
+    <Energy>k__BackingField: 0
+    <MouseDistance>k__BackingField: 0
+--- !u!114 &34456503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34456497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab4e78d81aa8b74b996d31f020f3a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VeryShyFerretBehavior
+--- !u!114 &34456504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34456497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801869f8b79730f45afed949cd350cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseDistanceCalculator
 --- !u!1 &62354304
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +729,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2135e6cea16a3844998632fefc684cd6, type: 3}
+--- !u!1 &514498986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514498988}
+  - component: {fileID: 514498987}
+  m_Layer: 0
+  m_Name: WorldData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &514498987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514498986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87be5e3420e59e46bf68a1cecce2855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &514498988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514498986}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.77777, y: 5.99008, z: 5.23068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &677096674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   treatPrefab: {fileID: 1054037896607445045, guid: e6683c59397ef6a41bf509af878e01ca, type: 3}
-  isTreatActive: 0
 --- !u!4 &1739608714
 Transform:
   m_ObjectHideFlags: 0
@@ -1403,6 +1493,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1349296109}
+  - {fileID: 514498988}
   - {fileID: 86539883}
   - {fileID: 34456500}
   - {fileID: 8037657278373184567}

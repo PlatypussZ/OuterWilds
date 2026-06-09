@@ -4,19 +4,19 @@ public class FerretWanderState : WanderState
 {
     private Vector3 target;
 
-    public override void OnStateEnter(Animal controller)
+    public override void OnStateEnter(FerretBaseBehavior controller)
     {
         target = Vector3.zero;
     }
 
-    public override void OnStateExit(Animal controller)
+    public override void OnStateExit(FerretBaseBehavior controller)
     {
 
     }
 
-    public override void OnStateUpdate(Animal controller)
+    public override void OnStateUpdate(FerretBaseBehavior controller)
     {
-        if (controller.spawner.isTreatActive && controller.Hunger > 50)
+      /*  if (controller.spawner.isTreatActive && controller.Hunger > 50)
         {
             controller.SwitchState(controller.ChaseTreat);
             return;
@@ -31,7 +31,7 @@ public class FerretWanderState : WanderState
         {
             controller.PlayAnimForSeconds(3f, controller.Idle);
             target = Vector3.zero;
-        }
+        }*/
     }
 
     private Vector3 ChooseNewTarget(Vector2 ScreenWidth)
