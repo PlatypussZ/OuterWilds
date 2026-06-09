@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 109
+        width: 64
         height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50f9b0d762d64c8409adc80b04e1cd1a
-      internalID: -318036369
+      spriteID: 9237c6f7174f1a1498133fd95bac127b
+      internalID: -1373223860
       vertices: []
       indices: 
       edges: []
@@ -122,9 +122,9 @@ TextureImporter:
       name: FerretSit_1
       rect:
         serializedVersion: 2
-        x: 109
+        x: 64
         y: 0
-        width: 109
+        width: 64
         height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7c23e7c97f93c9478dea6ce89669dbb
-      internalID: -863705895
+      spriteID: 688a3f2581cf7494a9c0965e2b779fd6
+      internalID: -749858618
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b14f33eb3f5f68c47bc05e9e203dad66
+    spriteID: 3a975630f8fb78342b982e2ad3e8c387
     internalID: 0
     vertices: []
     indices: 
@@ -154,10 +154,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":109.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      FerretSit_0: -318036369
-      FerretSit_1: -863705895
+      FerretSit_0: -1373223860
+      FerretSit_1: -749858618
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
