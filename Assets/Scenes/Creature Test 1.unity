@@ -269,7 +269,7 @@ MonoBehaviour:
   ferretAnimationController: {fileID: 34456501}
   mouseDistanceCalculator: {fileID: 34456504}
   startStats:
-    StartingTrust: 0
+    StartingTrust: 22
     StartWalkSpeed: 1.24
     StartRunSpeed: 16
     StartHunger: 70

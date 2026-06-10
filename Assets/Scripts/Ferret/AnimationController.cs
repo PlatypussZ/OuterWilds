@@ -25,7 +25,6 @@ public class AnimationController : MonoBehaviour
     public bool IsWaiting { get; private set; }
 
     private string SwitchingAnimString;
-    private bool isSwitching;
 
     public void SetAnimationSet(AnimationSet set)
     {
@@ -67,14 +66,12 @@ public class AnimationController : MonoBehaviour
 
     private IEnumerator PlayAnim(string animation)
     {
-        isSwitching = true;
         SwitchingAnimString = animation;
         yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
 
         animator.Play(SwitchingAnimString);
-        isSwitching = false;
     }
     private IEnumerator PlayAnim(float time, string animation)
     {
