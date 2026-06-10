@@ -134,6 +134,9 @@ GameObject:
   - component: {fileID: 34456502}
   - component: {fileID: 34456501}
   - component: {fileID: 34456503}
+  - component: {fileID: 34456505}
+  - component: {fileID: 34456507}
+  - component: {fileID: 34456506}
   m_Layer: 6
   m_Name: Ferret
   m_TagString: Untagged
@@ -275,6 +278,15 @@ MonoBehaviour:
   - StartValue: 0
     Behavior: {fileID: 34456503}
     animationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
+  - StartValue: 20
+    Behavior: {fileID: 34456505}
+    animationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
+  - StartValue: 40
+    Behavior: {fileID: 34456507}
+    animationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
+  - StartValue: 60
+    Behavior: {fileID: 34456506}
+    animationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
   worldDataManager: {fileID: 514498987}
   stats:
     <CurrentTrust>k__BackingField: 0
@@ -283,6 +295,7 @@ MonoBehaviour:
     <Hunger>k__BackingField: 0
     <Energy>k__BackingField: 0
     <MouseDistance>k__BackingField: 0
+    <HasTreat>k__BackingField: 0
 --- !u!114 &34456503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +321,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801869f8b79730f45afed949cd350cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseDistanceCalculator
+--- !u!114 &34456505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34456497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc94acb277aa2564580d28c75e9f9456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShyFerretBehavior
+  <CurrentStateName>k__BackingField: 
+--- !u!114 &34456506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34456497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b4d18dcc47b424d94bd584323efc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TameFerretBehavior
+  <CurrentStateName>k__BackingField: 
+--- !u!114 &34456507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34456497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bd9a056473d96442a166c7df42735ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CautiousFerretBehavior
+  <CurrentStateName>k__BackingField: 
 --- !u!1 &62354304
 GameObject:
   m_ObjectHideFlags: 0

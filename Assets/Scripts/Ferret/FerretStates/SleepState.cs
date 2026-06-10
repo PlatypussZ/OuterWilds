@@ -11,7 +11,6 @@ public class SleepState : StateBaseClass
 
     public override void OnStateExit(FerretBaseBehavior controller)
     {
-        Debug.Log("exit sleeping state");
     }
 
     public override void OnStateUpdate(FerretBaseBehavior controller)
@@ -25,15 +24,20 @@ public class SleepState : StateBaseClass
             UpdateEnergy(controller);
         }
 
-        if (TrustTimer >= 10f)
+        if (TrustTimer >= 3f)
         {
-            TrustTimer -= 10f;
+            TrustTimer -= 3f;
             UpdateTrust(controller);
+        }
+
+        if (controller.Stats.Energy > 100)
+        {
+            controller.SwitchState(controller.WanderState);
         }
     }
     private void UpdateEnergy(FerretBaseBehavior controller)
     {
-        controller.Stats.ChangeEnenergy(1);
+        controller.Stats.ChangeEnenergy(3);
     }
 
     private void UpdateTrust(FerretBaseBehavior controller)
