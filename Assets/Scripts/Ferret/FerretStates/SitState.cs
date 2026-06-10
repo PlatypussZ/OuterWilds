@@ -4,7 +4,7 @@ public class SitState : StateBaseClass
 {
     public override void OnStateEnter(FerretBaseBehavior controller)
     {
-        controller.AnimController.PlayAnimation(controller.AnimController.Sitting);
+        controller.SwitchState(controller.WanderState);
     }
 
     public override void OnStateExit(FerretBaseBehavior controller)

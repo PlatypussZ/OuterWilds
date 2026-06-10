@@ -11,22 +11,16 @@ public class CautiousFerretBehavior : FerretBaseBehavior
     public override WanderState WanderState { get; protected set; } = new();
 
 
-    public override void OnBehaviorEnabled(FerretActiveStats stats, AnimationController animController, IWorldDataBaseManager worldDataManager)
-    {
-        base.OnBehaviorEnabled(stats, animController, worldDataManager);
-        SwitchState(SitState);
-    }
-
     public override void OnBehaviorCheck()
     {
-        if (Stats.MouseDistance > 1)
+        if (CurrentState == Histate)
+            return;
+
+        if (Stats.MouseDistance < 1)
         {
             SwitchState(Histate);
             return;
         }
-
-        if (CurrentState == Histate)
-            return;
 
         if (Stats.HasTreat && Stats.MouseDistance > 2)
         {

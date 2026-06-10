@@ -8,7 +8,6 @@ public class VeryShyWalkAwayState : WanderState
     public override void OnStateEnter(FerretBaseBehavior controller)
     {
         target = Vector3.zero;
-        Debug.Log("Walk away state entered");
     }
 
     public override void OnStateExit(FerretBaseBehavior controller)

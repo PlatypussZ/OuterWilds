@@ -9,12 +9,6 @@ public class VeryShyFerretBehavior : FerretBaseBehavior
     public override WanderState WanderState { get; protected set; } = new VeryShyWalkAwayState();
     public override GetFoodState GetFoodState { get; protected set; } = new VeryShyGetFoodState();
 
-    public override void OnBehaviorEnabled(FerretActiveStats stats, AnimationController animController, IWorldDataBaseManager worldDataManager)
-    {
-        base.OnBehaviorEnabled(stats, animController, worldDataManager);
-        SwitchState(SitState);
-    }
-
     public override void OnBehaviorCheck()
     {
         if (CurrentState == Histate)

@@ -11,12 +11,6 @@ public class TameFerretBehavior : FerretBaseBehavior
     public override WanderState WanderState { get; protected set; } = new();
 
 
-    public override void OnBehaviorEnabled(FerretActiveStats stats, AnimationController animController, IWorldDataBaseManager worldDataManager)
-    {
-        base.OnBehaviorEnabled(stats, animController, worldDataManager);
-        SwitchState(SitState);
-    }
-
     public override void OnBehaviorCheck()
     {
         if (CurrentState == Histate)

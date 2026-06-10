@@ -35,14 +35,12 @@ public abstract class FerretBaseBehavior : MonoBehaviour
         Stats = stats;
         AnimController = animController;
         WorldData = worldDataManager;
+        SwitchState(SitState);
     }
 
     public virtual void OnBehaviorDisabled()
     {
-        SwitchState(null);
-        Stats = null;
-        AnimController = null;
-        WorldData = null;
+
     }
 
     public virtual void OnBehaviorCheck()
@@ -88,8 +86,14 @@ public abstract class FerretBaseBehavior : MonoBehaviour
 
         LastState = CurrentState;
 
+  
         CurrentState = newState;
-        CurrentStateName = CurrentState.ToString();
+        if (CurrentState != null)
+            CurrentStateName = CurrentState.ToString();
+        else
+        {
+            CurrentStateName = string.Empty;
+        }
 
 
         if (newState != null)

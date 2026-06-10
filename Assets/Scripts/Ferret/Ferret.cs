@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +31,8 @@ public class Ferret : MonoBehaviour
     [field: SerializeField] private FerretActiveStats stats;
     public FerretBaseBehavior CurrentFerretBehaviorSet { get; private set; } = null;
 
+    private bool isFerretChangingBehavior;
+
     private void Start()
     {
         InitializeFerret();
@@ -48,6 +51,9 @@ public class Ferret : MonoBehaviour
     }
     private void Update()
     {
+        if (isFerretChangingBehavior)
+            return;
+
         stats.SetMouseDistance(mouseDistanceCalculator.GetMouseDistance(gameObject));
         UpdateFeretBehavior();
     }
@@ -82,6 +88,7 @@ public class Ferret : MonoBehaviour
 
         if (Ferret != null && Ferret != CurrentFerretBehaviorSet)
         {
+            StartCoroutine(ChangingFerretBehavior());
             ChangeFerretBehaviorSet(Ferret, animationSet);
         }
     }
@@ -98,6 +105,16 @@ public class Ferret : MonoBehaviour
 
         if (CurrentFerretBehaviorSet != null)
             CurrentFerretBehaviorSet.OnBehaviorEnabled(stats, ferretAnimationController, worldDataManager);
+    }
+
+    private IEnumerator ChangingFerretBehavior()
+    {
+        isFerretChangingBehavior = true;
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+
+        isFerretChangingBehavior = false;
     }
 
 }
