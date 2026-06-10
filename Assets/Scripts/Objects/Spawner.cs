@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject treatPrefab;
-    [SerializeField] private IWorldDataAddmanager worldData;
+    [SerializeField] private WorldDataManager worldData;
 
     public void SpawnTreat()
     {

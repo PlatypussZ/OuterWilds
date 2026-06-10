@@ -1,9 +1,11 @@
 using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public abstract class FerretBaseBehavior : MonoBehaviour
 {
+    [field: SerializeField] public string CurrentStateName { get; private set; }
     public AnimationController AnimController { get; private set; }
     public FerretActiveStats Stats { get; private set; }
     public IWorldDataBaseManager WorldData { get; private set; }
@@ -13,7 +15,7 @@ public abstract class FerretBaseBehavior : MonoBehaviour
     public abstract IdleState IdleState { get; protected set; }
     public abstract SleepState SleepState { get; protected set; }
     public abstract SitState SitState { get; protected set; }
-
+    public abstract GetFoodState GetFoodState{ get; protected set;}
     public abstract WanderState WanderState { get; protected set; }
 
 
@@ -23,6 +25,9 @@ public abstract class FerretBaseBehavior : MonoBehaviour
     [HideInInspector] public StateBaseClass LastState { get; private set; }
     [HideInInspector] private Vector3 currentTarget;
     [HideInInspector] private int ticksArrived;
+
+    private float energyTimer;
+    private float hungerTimer;
 
 
     public virtual void OnBehaviorEnabled(FerretActiveStats stats, AnimationController animController, IWorldDataBaseManager worldDataManager)
@@ -39,22 +44,58 @@ public abstract class FerretBaseBehavior : MonoBehaviour
         AnimController = null;
         WorldData = null;
     }
+
+    public virtual void OnBehaviorCheck()
+    {
+    }
     public void UpdateFerretBehavior()
     {
+        OnBehaviorCheck();
+
+
         if (CurrentState != null)
             CurrentState.OnStateUpdate(this);
+
+        if(CurrentState != SleepState)
+        {
+            energyTimer += Time.deltaTime;
+
+            if (energyTimer >= 1f)
+            {
+                energyTimer -= 1f;
+                Stats.ChangeEnenergy(-1);
+            }
+        }
+
+        if (!AnimController.IsEating)
+        {
+            hungerTimer += Time.deltaTime;
+
+            if (hungerTimer >= 2f)
+            {
+                hungerTimer -= 2f;
+                Stats.ChangeHunger(1);
+            }
+        }
     }
     public void SwitchState(StateBaseClass newState)
     {
+        if (CurrentState == newState)
+            return;
+
         if (CurrentState != null)
             CurrentState.OnStateExit(this);
 
         LastState = CurrentState;
 
+        CurrentState = newState;
+        CurrentStateName = CurrentState.ToString();
+
+
         if (newState != null)
             newState.OnStateEnter(this);
 
-        CurrentState = newState;
+      
     }
 
     public bool GoToTarget(Vector3 target, float speed)
@@ -85,7 +126,7 @@ public abstract class FerretBaseBehavior : MonoBehaviour
             Move(target, speed);
         }
 
-        return isArrived;
+        return ticksArrived >= 3;
 
     }
     public Vector2 GetScreenWidth()
@@ -119,14 +160,18 @@ public abstract class FerretBaseBehavior : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
 
-        if (speed >= Stats.RunSpeed)
+        if (!AnimController.IsEating)
         {
-            AnimController.PlayAnimation(AnimController.Running);
+            if (speed >= Stats.RunSpeed)
+            {
+                AnimController.PlayAnimation(AnimController.Running);
+            }
+            else
+            {
+                AnimController.PlayAnimation(AnimController.Walking);
+            }
         }
-        else
-        {
-            AnimController.PlayAnimation(AnimController.Walking);
-        }
+
 
         transform.position = pos;
     }

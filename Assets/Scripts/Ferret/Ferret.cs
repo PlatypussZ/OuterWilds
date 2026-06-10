@@ -20,7 +20,7 @@ public class Ferret : MonoBehaviour
 
     [field: SerializeField] private List<TrustBehaviors> behaviors = new List<TrustBehaviors>();
 
-    [field: SerializeField] private IWorldDataBaseManager worldDataManager;
+    [field: SerializeField] private WorldDataManager worldDataManager;
 
 
     [field: Space]
@@ -39,6 +39,12 @@ public class Ferret : MonoBehaviour
     private void InitializeFerret()
     {
         stats.InitializeStats(startStats);
+        stats.OnTrustChanged += OnTrustChanged;
+    }
+
+    private void OnDisable()
+    {
+        stats.OnTrustChanged -= OnTrustChanged;
     }
     private void Update()
     {
@@ -49,6 +55,11 @@ public class Ferret : MonoBehaviour
     {
         if (CurrentFerretBehaviorSet != null)
             CurrentFerretBehaviorSet.UpdateFerretBehavior();
+    }
+
+    public void OnTrustChanged()
+    {
+        EvaluateTrust();
     }
     public void ChangeTrust(int amount)
     {

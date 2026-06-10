@@ -10,5 +10,6 @@ public class FerretTest :  FerretBaseBehavior
     public override SleepState SleepState { get => throw new System.NotImplementedException(); protected set => throw new System.NotImplementedException(); }
     public override SitState SitState { get => throw new System.NotImplementedException(); protected set => throw new System.NotImplementedException(); }
     public override WanderState WanderState { get => throw new System.NotImplementedException(); protected set => throw new System.NotImplementedException(); }
+    public override GetFoodState GetFoodState { get => throw new System.NotImplementedException(); protected set => throw new System.NotImplementedException(); }
 }
  

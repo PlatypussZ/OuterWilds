@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class HisState : StateBaseClass
 {
-
-    
     public override void OnStateEnter(FerretBaseBehavior controller)
     {
         controller.AnimController.PlayAnimation(controller.AnimController.Hissing);
@@ -13,6 +11,7 @@ public class HisState : StateBaseClass
 
     public override void OnStateExit(FerretBaseBehavior controller)
     {
+        controller.Stats.ChangeTrust(-1);
     }
 
     public override void OnStateUpdate(FerretBaseBehavior controller)

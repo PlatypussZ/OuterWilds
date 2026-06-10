@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WorldDataManager : MonoBehaviour, IWorldDataAddmanager
 {
-    private WorldData worldData;
+    private WorldData worldData = new WorldData();
     public void AddTreatToList(Treat treat)
     {
         if (worldData.treatList.Contains(treat))

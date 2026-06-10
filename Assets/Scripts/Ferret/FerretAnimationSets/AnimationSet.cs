@@ -10,4 +10,6 @@ public class AnimationSet : ScriptableObject
     [field: SerializeField] public string Hissing { get; private set; } = "His";
 
     [field: SerializeField] public string Sitting { get; private set; }= "Sit";
+    [field: SerializeField] public string Sleeping { get; private set; } = "Sleep";
+
 }

@@ -15,6 +15,7 @@ public struct StartingStats
 [Serializable]
 public class FerretActiveStats
 {
+    public event Action OnTrustChanged;
     public void InitializeStats(StartingStats startStats)
     {
         WalkSpeed = startStats.StartWalkSpeed;
@@ -30,14 +31,35 @@ public class FerretActiveStats
     [field: SerializeField] public float Hunger { get; private set; }
     [field: SerializeField] public float Energy { get; private set; }
 
-    [field: SerializeField] public float MouseDistance { get; private set; }    
+    [field: SerializeField] public float MouseDistance { get; private set; }
+
+    [field: SerializeField] public bool HasTreat { get; private set; }
 
     public void ChangeTrust(int amount)
     {
         CurrentTrust += amount;
+        OnTrustChanged?.Invoke();
     }
+
+    public void ChangeEnenergy(int amount)
+    {
+        Energy += amount;
+    }
+
+    public void ChangeHunger(int amount)
+    {
+        Hunger += amount;
+    }
+
     public void SetMouseDistance (float distance)
     {
         MouseDistance = distance;
     }
+
+    public void SetHasTreat(bool hasTreat)
+    {
+        HasTreat = hasTreat;
+    }
+
+ 
 }

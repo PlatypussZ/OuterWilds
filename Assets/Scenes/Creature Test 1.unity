@@ -269,12 +269,13 @@ MonoBehaviour:
     StartingTrust: 0
     StartWalkSpeed: 1.24
     StartRunSpeed: 16
-    StartHunger: 73
-    StartEnergy: 0
+    StartHunger: 70
+    StartEnergy: 40
   behaviors:
   - StartValue: 0
     Behavior: {fileID: 34456503}
     animationSet: {fileID: 11400000, guid: d5da465e125d82947ad2da269e99e4d9, type: 2}
+  worldDataManager: {fileID: 514498987}
   stats:
     <CurrentTrust>k__BackingField: 0
     <WalkSpeed>k__BackingField: 0
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab4e78d81aa8b74b996d31f020f3a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VeryShyFerretBehavior
+  <CurrentStateName>k__BackingField: 
 --- !u!114 &34456504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,6 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   treatPrefab: {fileID: 1054037896607445045, guid: e6683c59397ef6a41bf509af878e01ca, type: 3}
+  worldData: {fileID: 514498987}
 --- !u!4 &1739608714
 Transform:
   m_ObjectHideFlags: 0
